@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PhysicsWiz — Features</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="Animation.css" />
+
+</head>
+
+<body>
+
+  <div id="CUR"></div>
+  <div id="CUR2"></div>
+  <div class="scan"></div>
+  <div class="grid-bg"></div>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="in">
+      <div class="brand" onclick="showPage('hub')">⚛ PhysicsWiz</div>
+      <div class="nav-links">
+        <div class="nav-link" id="nl-animations" onclick="showPage('animations')">🎬 Animations</div>
+        <div class="nav-link" id="nl-sliders" onclick="showPage('sliders')">🎛️ Sliders</div>
+        <div class="nav-link" id="nl-think" onclick="showPage('think')">🧩 Think</div>
+        <div class="nav-link" id="nl-progress" onclick="showPage('progress')">📊 Progress</div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- =====================================================
+     HUB PAGE
+     ===================================================== -->
+  <div id="page-hub" class="page active">
+    <div class="hub-hero">
+      <div>
+        <h1 class="hub-title">EXPLORE THE<br><span class="glow">LEARNING TOOLS</span></h1>
+        <p class="hub-sub">Har feature ek alag experience hai — animations dekho, sliders chalao, questions sochho,
+          progress track karo</p>
+        <div class="hub-cards">
+          <div class="hub-card" style="--hc:#00d4ff" onclick="showPage('animations')">
+            <div class="hc-icon">🎬</div>
+            <div class="hc-title">LIVE ANIMATIONS</div>
+            <div class="hc-desc">8 real-time physics animations — charges, current, magnetism, optics aur zyada</div>
+            <div class="hc-btn">EXPLORE →</div>
+          </div>
+          <div class="hub-card" style="--hc:#a855f7" onclick="showPage('sliders')">
+            <div class="hc-icon">🎛️</div>
+            <div class="hc-title">INTERACTIVE SLIDERS</div>
+            <div class="hc-desc">Values change karo aur live graphs dekho — Ohm's Law, Coulomb, Refraction</div>
+            <div class="hc-btn">INTERACT →</div>
+          </div>
+          <div class="hub-card" style="--hc:#fbbf24" onclick="showPage('think')">
+            <div class="hc-icon">🧩</div>
+            <div class="hc-title">THINK QUESTIONS</div>
+            <div class="hc-desc">Timer wale MCQs — pehle sochho, phir answer dekho. Explanation bhi milegi</div>
+            <div class="hc-btn">THINK →</div>
+          </div>
+          <div class="hub-card" style="--hc:#10b981" onclick="showPage('progress')">
+            <div class="hc-icon">📊</div>
+            <div class="hc-title">PROGRESS TRACKER</div>
+            <div class="hc-desc">XP system, streaks, achievements aur chapter-wise progress — sab ek jagah</div>
+            <div class="hc-btn">TRACK →</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =====================================================
+     PAGE 1: LIVE ANIMATIONS
+     ===================================================== -->
+  <div id="page-animations" class="page">
+    <div class="page-hdr">
+      <h2>🎬 LIVE ANIMATIONS</h2>
+      <p>Physics concepts ko real-time mein dekho — har animation ek alag concept</p>
+    </div>
+    <div class="wrap">
+      <div class="back-btn" onclick="showPage('hub')">← BACK TO HUB</div>
+      <div class="anim-grid" id="animGrid">
+
+        <!-- CARD 1: CHARGES -->
+        <div class="anim-card">
+          <div class="anim-canvas-box">
+            <canvas id="ca-charges"></canvas>
+            <div class="anim-label">⚡ ELECTRIC CHARGES</div>
+          </div>
+          <div class="anim-info">
+            <div class="anim-title">COULOMB'S LAW</div>
+            <div class="anim-desc">Like charges repel, unlike attract. Watch the force change with distance!</div>
+          </div>
+        </div>
+
+        <!-- CARD 2: CURRENT -->
+        <div class="anim-card">
+          <div class="anim-canvas-box">
+            <canvas id="ca-current"></canvas>
+            <div class="anim-label">🔌 ELECTRON FLOW</div>
+          </div>
+          <div class="anim-info">
+            <div class="anim-title">CURRENT ELECTRICITY</div>
+            <div class="anim-desc">Electrons wire mein kaise flow karte hain — conventional current vs electron flow
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 3: MAGNETIC -->
+        <div class="anim-card">
+          <div class="anim-canvas-box">
+            <canvas id="ca-mag"></canvas>
+            <div class="anim-label">🧲 MAGNETIC FIELD</div>
+          </div>
+          <div class="anim-info">
+            <div class="anim-title">MAGNETIC FIELD LINES</div>
+            <div class="anim-desc">Current wire ke around circular field lines — Right Hand Thumb Rule</div>
+          </div>
+        </div>
+
+        <!-- CARD 4: EM INDUCTION -->
+        <div class="anim-card">
+          <div class="anim-canvas-box">
+            <canvas id="ca-emf"></canvas>
+            <div class="anim-label">🌀 EM INDUCTION</div>
+          </div>
+          <div class="anim-info">
+            <div class="anim-title">ELECTROMAGNETIC INDUCTION</div>
+            <div class="anim-desc">Magnet move karo → flux change → EMF induce! Faraday's Law in action</div>
+          </div>
+        </div>
+
+        <!-- CARD 5: OPTICS -->
+        <div class="anim-card">
+          <div class="anim-canvas-box">
+            <canvas id="ca-optics"></canvas>
+            <div class="anim-label">🔭 RAY OPTICS</div>
+          </div>
+          <div class="anim-info">
+            <div class="anim-title">REFRACTION & LENS</div>
+            <div class="anim-desc">Convex lens parallel rays ko focal point pe focus karta hai — Snell's Law</div>
+          </div>
+        </div>
+
+        <!-- CARD 6: WAVE -->
+        <div class="anim-card">
+          <div class="anim-canvas-box">
+            <canvas id="ca-wave"></canvas>
+            <div class="anim-label">〰️ WAVE INTERFERENCE</div>
+          </div>
+          <div class="anim-info">
+            <div class="anim-title">WAVE OPTICS</div>
+            <div class="anim-desc">Do waves ke beech constructive aur destructive interference pattern</div>
+          </div>
+        </div>
+
+        <!-- CARD 7: PHOTOELECTRIC -->
+        <div class="anim-card">
+          <div class="anim-canvas-box">
+            <canvas id="ca-photo"></canvas>
+            <div class="anim-label">☢️ PHOTOELECTRIC EFFECT</div>
+          </div>
+          <div class="anim-info">
+            <div class="anim-title">PHOTONS & ELECTRONS</div>
+            <div class="anim-desc">High frequency photons → electrons emit. E = hf se zyada → niklenga!</div>
+          </div>
+        </div>
+
+        <!-- CARD 8: DIODE -->
+        <div class="anim-card">
+          <div class="anim-canvas-box">
+            <canvas id="ca-diode"></canvas>
+            <div class="anim-label">💻 P-N JUNCTION DIODE</div>
+          </div>
+          <div class="anim-info">
+            <div class="anim-title">SEMICONDUCTOR DIODE</div>
+            <div class="anim-desc">Forward bias mein current flows, reverse mein blocked — ek taraf ka valve</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- =====================================================
+     PAGE 2: INTERACTIVE SLIDERS
+     ===================================================== -->
+  <div id="page-sliders" class="page">
+    <div class="page-hdr">
+      <h2>🎛️ INTERACTIVE SLIDERS</h2>
+      <p>Values change karo — equations live update hongi aur graphs bhi</p>
+    </div>
+    <div class="wrap">
+      <div class="back-btn" onclick="showPage('hub')">← BACK TO HUB</div>
+
+      <!-- SIM 1: OHM'S LAW -->
+      <div class="sim-card">
+        <div class="sim-title">⚡ OHM'S LAW SIMULATOR</div>
+        <div class="sim-desc">Voltage aur Resistance change karo — Current aur Power live dekhon</div>
+        <div class="sim-body">
+          <div class="sim-controls">
+            <div class="ctrl-row">
+              <div class="ctrl-label"><span>Voltage (V)</span><span class="ctrl-val" id="ohm-v-val">12 V</span></div>
+              <input type="range" class="pw-range" id="ohm-v" min="1" max="50" value="12" oninput="updateOhm()" />
+            </div>
+            <div class="ctrl-row">
+              <div class="ctrl-label"><span>Resistance (Ω)</span><span class="ctrl-val" id="ohm-r-val">10 Ω</span></div>
+              <input type="range" class="pw-range" id="ohm-r" min="1" max="100" value="10" oninput="updateOhm()" />
+            </div>
+            <div class="graph-box"><canvas id="ohm-graph" height="120"></canvas></div>
+          </div>
+          <div class="sim-output">
+            <div class="out-title">RESULTS</div>
+            <div class="out-val" id="ohm-i">1.200</div>
+            <div class="out-unit">Ampere (Current)</div>
+            <div class="out-bar">
+              <div class="out-bar-fill" id="ohm-bar" style="width:12%"></div>
+            </div>
+            <div class="out-formula">V = I × R</div>
+            <div class="out-insight" id="ohm-insight">Current = 1.2A, Power = 14.4W</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SIM 2: COULOMB -->
+      <div class="sim-card">
+        <div class="sim-title">🔵 COULOMB'S LAW SIMULATOR</div>
+        <div class="sim-desc">Charges aur distance change karo — electrostatic force dekho</div>
+        <div class="sim-body">
+          <div class="sim-controls">
+            <div class="ctrl-row">
+              <div class="ctrl-label"><span>Charge q₁ (μC)</span><span class="ctrl-val" id="coul-q1-val">2 μC</span>
+              </div>
+              <input type="range" class="pw-range" id="coul-q1" min="1" max="10" value="2" oninput="updateCoulomb()" />
+            </div>
+            <div class="ctrl-row">
+              <div class="ctrl-label"><span>Charge q₂ (μC)</span><span class="ctrl-val" id="coul-q2-val">3 μC</span>
+              </div>
+              <input type="range" class="pw-range" id="coul-q2" min="1" max="10" value="3" oninput="updateCoulomb()" />
+            </div>
+            <div class="ctrl-row">
+              <div class="ctrl-label"><span>Distance r (m)</span><span class="ctrl-val" id="coul-r-val">1.0 m</span>
+              </div>
+              <input type="range" class="pw-range" id="coul-r" min="1" max="20" value="10" oninput="updateCoulomb()" />
+            </div>
+            <div class="graph-box"><canvas id="coul-graph" height="120"></canvas></div>
+          </div>
+          <div class="sim-output">
+            <div class="out-title">COULOMB FORCE</div>
+            <div class="out-val" id="coul-f">0.540</div>
+            <div class="out-unit">Newton (Force)</div>
+            <div class="out-bar">
+              <div class="out-bar-fill" id="coul-bar" style="width:54%"></div>
+            </div>
+            <div class="out-formula">F = kq₁q₂ / r²</div>
+            <div class="out-insight" id="coul-insight">Distance double → Force 1/4 ho jaata hai!</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SIM 3: SNELL'S LAW -->
+      <div class="sim-card">
+        <div class="sim-title">🔭 SNELL'S LAW SIMULATOR</div>
+        <div class="sim-desc">Angle aur refractive index change karo — refracted ray dekho</div>
+        <div class="sim-body">
+          <div class="sim-controls">
+            <div class="ctrl-row">
+              <div class="ctrl-label"><span>Angle of Incidence (°)</span><span class="ctrl-val"
+                  id="snell-i-val">30°</span></div>
+              <input type="range" class="pw-range" id="snell-i" min="0" max="89" value="30" oninput="updateSnell()" />
+            </div>
+            <div class="ctrl-row">
+              <div class="ctrl-label"><span>Refractive Index n₂</span><span class="ctrl-val"
+                  id="snell-n-val">1.50</span></div>
+              <input type="range" class="pw-range" id="snell-n" min="100" max="250" value="150"
+                oninput="updateSnell()" />
+            </div>
+            <div class="graph-box"><canvas id="snell-graph" height="120"></canvas></div>
+          </div>
+          <div class="sim-output">
+            <div class="out-title">REFRACTION ANGLE</div>
+            <div class="out-val" id="snell-r">19.5°</div>
+            <div class="out-unit">Angle of Refraction</div>
+            <div class="out-bar">
+              <div class="out-bar-fill" id="snell-bar" style="width:20%"></div>
+            </div>
+            <div class="out-formula">n₁sinθ₁ = n₂sinθ₂</div>
+            <div class="out-insight" id="snell-insight">Air → Glass. Denser medium → angle ghata.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- =====================================================
+     PAGE 3: THINK QUESTIONS
+     ===================================================== -->
+  <div id="page-think" class="page">
+    <div class="page-hdr">
+      <h2>🧩 THINK QUESTIONS</h2>
+      <p>Pehle sochho — phir options dekho. Timer bhi hai, jaldi karo! 🕐</p>
+    </div>
+    <div class="wrap">
+      <div class="back-btn" onclick="showPage('hub')">← BACK TO HUB</div>
+
+      <!-- Stats -->
+      <div class="think-stats">
+        <div class="ts-card">
+          <div class="ts-big" id="tq-correct">0</div>
+          <div class="ts-lbl">✅ Correct</div>
+        </div>
+        <div class="ts-card">
+          <div class="ts-big" id="tq-wrong">0</div>
+          <div class="ts-lbl">❌ Wrong</div>
+        </div>
+        <div class="ts-card">
+          <div class="ts-big" id="tq-pct">—</div>
+          <div class="ts-lbl">🎯 Accuracy</div>
+        </div>
+      </div>
+
+      <div class="think-grid" id="thinkGrid"></div>
+    </div>
+  </div>
+
+  <!-- =====================================================
+     PAGE 4: PROGRESS TRACKER
+     ===================================================== -->
+  <div id="page-progress" class="page">
+    <div class="page-hdr">
+      <h2>📊 PROGRESS TRACKER</h2>
+      <p>Tera physics journey — XP, streaks, achievements sab yahan</p>
+    </div>
+    <div class="wrap">
+      <div class="back-btn" onclick="showPage('hub')">← BACK TO HUB</div>
+
+      <!-- XP Bar -->
+      <div class="xp-bar-wrap">
+        <div class="xp-level">Lv.<br><span id="xp-level-num">3</span></div>
+        <div class="xp-info">
+          <div class="xp-label">EXPERIENCE POINTS</div>
+          <div class="xp-bar">
+            <div class="xp-fill" id="xp-fill" style="width:45%"></div>
+          </div>
+          <div class="xp-next"><span id="xp-cur">450</span> / <span id="xp-max">1000</span> XP — Next: Level 4</div>
+        </div>
+        <div style="font-family:'Orbitron',monospace;font-size:1.8rem;font-weight:900;color:var(--c2);" id="xp-total">
+          450</div>
+      </div>
+
+      <!-- Main stats + streak -->
+      <div class="prog-hero">
+        <div class="prog-main-card">
+          <div
+            style="font-family:'Orbitron',monospace;font-size:.7rem;letter-spacing:2px;color:var(--muted);margin-bottom:16px;">
+            OVERALL PROGRESS</div>
+          <div class="prog-ring-wrap">
+            <svg class="prog-ring-svg" width="120" height="120" viewBox="0 0 120 120">
+              <defs>
+                <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:var(--c1)" />
+                  <stop offset="100%" style="stop-color:var(--c2)" />
+                </linearGradient>
+              </defs>
+              <circle class="ring-track" cx="60" cy="60" r="52" />
+              <circle class="ring-fill" id="ringFill" cx="60" cy="60" r="52" stroke-dasharray="327"
+                stroke-dashoffset="230" />
+              <text x="60" y="54" text-anchor="middle" class="ring-text ring-pct" id="ringPct">30%</text>
+              <text x="60" y="68" text-anchor="middle" class="ring-text ring-sub">COMPLETE</text>
+            </svg>
+            <div class="prog-info">
+              <div class="prog-stat">
+                <div class="ps-lbl">TOPICS DONE</div>
+                <div class="ps-val" id="ps-done">3 / 10</div>
+              </div>
+              <div class="prog-stat">
+                <div class="ps-lbl">QUIZ SCORE</div>
+                <div class="ps-val" id="ps-score">21 pts</div>
+              </div>
+              <div class="prog-stat">
+                <div class="ps-lbl">TIME STUDIED</div>
+                <div class="ps-val" id="ps-time">2h 15m</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="streak-card">
+          <div
+            style="font-family:'Orbitron',monospace;font-size:.7rem;letter-spacing:2px;color:var(--c4);margin-bottom:6px;">
+            🔥 STUDY STREAK</div>
+          <div style="font-family:'Orbitron',monospace;font-size:2.5rem;font-weight:900;color:var(--c4);"
+            id="streak-num">7</div>
+          <div style="color:var(--muted);font-size:.8rem;margin-top:2px;">Days in a row 🔥</div>
+          <div class="streak-days" id="streakDays"></div>
+        </div>
+      </div>
+
+      <!-- Unit Progress -->
+      <div class="section-hdr">
+        <h3>📚 CHAPTER-WISE PROGRESS</h3>
+        <p>Kahan ho — aur kahan jaana hai</p>
+      </div>
+      <div class="unit-prog-list" id="unitProgList"></div>
+
+      <!-- Achievements -->
+      <div class="section-hdr" style="margin-top:32px;">
+        <h3>🏆 ACHIEVEMENTS</h3>
+        <p>Earn karo — seekhte seekhte</p>
+      </div>
+      <div class="achievement-grid" id="achGrid"></div>
+
+    </div>
+  </div>
+
+  <script src="Animation.js"></script>
+</body>
+
+</html>
