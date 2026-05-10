@@ -78,7 +78,7 @@ function loginUser() {
     setTimeout(() => {
         btn.textContent = '✅ Success! Redirecting...';
         setTimeout(() => {
-            window.location.href = '../Contact_Us/Contact.html';
+            window.location.href = 'Contact.html';
         }, 700);
     }, 1100);
 }
@@ -90,7 +90,7 @@ function signUpUser(e) {
     btn.classList.add('loading');
     setTimeout(() => {
         btn.textContent = '✅ Account created!';
-        setTimeout(() => { window.location.href = '../Contact_Us/Contact.html'; }, 700);
+        setTimeout(() => { window.location.href = 'Contact.html'; }, 700);
     }, 1200);
 }
 
@@ -134,7 +134,7 @@ googleBtn.addEventListener("click", () => {
             });
 
             // Redirect
-            window.location.href = "../Contact_Us/Contact.html";
+            window.location.href = "Contact.html";
 
         })
 
