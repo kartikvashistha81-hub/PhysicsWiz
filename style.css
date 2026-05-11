@@ -1322,18 +1322,22 @@ body {
     display: block;
   }
 
-/* MOBILE MENU STYLE */
 @media (max-width: 768px) {
   .nav-links {
     position: fixed;
     top: 0;
-    right: -100%;
-    width: 70%;
+    right: -260px;
+    width: 240px;
     height: 100vh;
     background: white;
+    display: flex;
     flex-direction: column;
-    padding: 80px 20px;
-    transition: 0.3s ease;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 100px 24px 24px;
+    gap: 22px;
+    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.08);
+    transition: right 0.3s ease;
     z-index: 1000;
   }
 
