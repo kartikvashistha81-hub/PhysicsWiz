@@ -752,6 +752,20 @@ function drawDiode(ctx, W, H, t) {
   ctx.fillText('p-n Junction Diode — one-way current valve', cx, H - 10);
 }
 
+// MENU TOGGLE
+function toggleMenu(e) {
+  e.stopPropagation();
+  const menu = document.getElementById("mobileMenu");
+  menu.classList.toggle("active");
+}
+
+// 👇 IMPORTANT PART (auto close on click)
+document.querySelectorAll("#mobileMenu a").forEach(link => {
+  link.addEventListener("click", () => {
+    document.getElementById("mobileMenu").classList.remove("active");
+  });
+});
+
 // ---- QUIZ ----
 let currentQuizData = [], userAnswers = {}, quizScoreGained = 0;
 
